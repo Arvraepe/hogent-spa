@@ -1,4 +1,5 @@
 # Single page applications with jQuery
+DISCLAIMER: this is a quick implementation of a simple Single Page Application. This isn't tested at all, but all the happy paths should be working
 
 ## The Movie DB
 1. TMDB Signup: https://www.themoviedb.org/account/signup
