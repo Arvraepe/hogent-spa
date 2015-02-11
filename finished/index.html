@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moviescovery</title>
+    <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="resources/styles/application.css" rel="stylesheet" />
+
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app/application.js"></script>
+    <script src="app/logging/Logger.js"></script>
+    <script src="app/services/ServiceFactory.js"></script>
+    <script src="app/services/TMDBService.js"></script>
+    <script src="app/gui/GUI.js"></script>
+
+</head>
+<body>
+
+    <div id="site-container" class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10" style="margin-bottom: 20px;">
+            <h1>Moviscovery</h1>
+            <div class="row">
+                <div class="col-lg-5" style="z-index: 99;">
+                    <div class="input-group">
+                        <input id="search-input" type="text" class="form-control" placeholder="Search movie..." aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                    </div>
+                    <div id="result-picklist"></div>
+                </div>
+                <div class="col-lg-7">
+                    <div style="margin-left: 20px; margin-top: 7px;">
+                        <span id="movie-details-empty-text" class="empty-text">Search and select a movie to see its details...</span>
+                        <div class="hidden" id="movie-details-container">
+                            <div class="row"><img data-valueof="backdropUrl" width="720" src="" /></div>
+                            <h1><span data-valueof="title"></span> <small>(<span data-valueof="year"></span>)</small></h1>
+                            <div class="row" data-valueof="tagline" style="font-style: italic; word-spacing: 3px; margin: 10px 0 10px 0;">{{tagline}}</div>
+                            <div data-valueof="overview">{{overview}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+
+    <script>
+        M.debug = false;
+        $(document).ready(function () {
+            M.GUI.init({
+                moviePicklistSelector: '#result-picklist',
+                movieDetailsEmptyTextSelector: '#movie-details-empty-text',
+                movieDetailsContainerSelector: '#movie-details-container'
+            });
+
+            $('#search-input').keyup(M.GUI.handlers.searchInputKeyUpHandler);
+
+        });
+    </script>
+</body>
+</html>
