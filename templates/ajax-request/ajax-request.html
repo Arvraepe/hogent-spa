@@ -1,0 +1,18 @@
+<script src="../libs/jquery.js"></script>
+<script>
+
+    // Example of a request for TMDB
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.themoviedb.org/3/search/movie?api_key=f6356f71a0245cd8ea4f701475aa8c45&query=hobbit',
+        contentType: 'application/json',
+        dataType: 'jsonp',
+        success: function (response) {
+            console.log(response)
+        },
+        error: function (xhr) {
+            console.log(xhr);
+        }
+    });
+
+</script>

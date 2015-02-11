@@ -9,8 +9,6 @@
     <script src="libs/jquery/jquery.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="app/application.js"></script>
-    <script src="app/logging/Logger.js"></script>
-    <script src="app/services/ServiceFactory.js"></script>
     <script src="app/services/TMDBService.js"></script>
     <script src="app/gui/GUI.js"></script>
 
@@ -46,16 +44,8 @@
     </div>
 
     <script>
-        M.debug = false;
         $(document).ready(function () {
-            M.GUI.init({
-                moviePicklistSelector: '#result-picklist',
-                movieDetailsEmptyTextSelector: '#movie-details-empty-text',
-                movieDetailsContainerSelector: '#movie-details-container'
-            });
-
-            $('#search-input').keyup(M.GUI.handlers.searchInputKeyUpHandler);
-
+            // TODO: Initialize application here... add handlers etc.
         });
     </script>
 </body>
