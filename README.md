@@ -16,3 +16,8 @@ DISCLAIMER: this is a quick implementation of a simple Single Page Application. 
 1. Search a movie (on key up event)
 2. Get some more information about the selected film
 3. .... whatever you want!
+
+# Need to read
+JavaScript The Good Parts by Douglas Crockford
+Secret of the JavaScript Ninja by John Resig
+
