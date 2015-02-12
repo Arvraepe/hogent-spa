@@ -45,7 +45,12 @@
 
     <script>
         $(document).ready(function () {
-            // TODO: Initialize application here... add handlers etc.
+            $('#search-input').keyup(function (evt) {
+                var query = $(this).val();
+                TMDBService.searchMovie(query, function (response) {
+                    console.log(response);
+                });
+            });
         });
     </script>
 </body>
